@@ -11,7 +11,7 @@ import re
 import os
 from dotenv import load_dotenv,find_dotenv
 _=load_dotenv(find_dotenv())
-openai.api_key = "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"
+openai.api_key = "your_key"
 app.config['NEGATIVE'] = 'bad'
 app.config['POSITIVE'] = 'good'
 # openai.api_key = os.getenv('your-key')
