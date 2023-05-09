@@ -1,51 +1,4 @@
-# import openai
-#
-#
-#
-# import openai
-#
-# # Apply the API key
-# openai.api_key = "sk-de77806abc64a9683eef044a78520ad4"
-#
-# # Define the text prompt
-# prompt = "In a shocking turn of events, scientists have discovered that "
-#
-# # Generate completions using the API
-# completions = openai.Completion.create(
-#     engine="text-davinci-002",
-#     prompt=prompt,
-#     max_tokens=100,
-#     n=1,
-#     stop=None,
-#     temperature=0.5,
-# )
-#
-# # Extract the message from the API response
-# message = completions.choices[0].text
-# print(message)
 
-
-# import openai
-# import os
-# from dotenv import load_dotenv,find_dotenv
-# _=load_dotenv(find_dotenv())
-# openai.api_key = "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"
-#
-# # openai.api_key = os.getenv('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')
-#
-# def get_completion(prompt,model='gpt-3.5-turbo'):
-#     messages = [{"role":"user","content":prompt}]
-#     response = openai.ChatCompletion.create(
-#         model=model,
-#         messages=messages,
-#         temperature=0,
-#     )
-#     return response.choices[0].message["content"]
-
-# if __name__ == '__main__':
-#     prompt = "加拿大在哪里"
-#     response = get_completion(prompt)
-#     print(response)
 import json
 
 from flask import Flask, render_template, request
@@ -61,7 +14,7 @@ _=load_dotenv(find_dotenv())
 openai.api_key = "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"
 app.config['NEGATIVE'] = 'bad'
 app.config['POSITIVE'] = 'good'
-# openai.api_key = os.getenv('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')
+# openai.api_key = os.getenv('your-key')
 
 def get_completion(prompt,model='gpt-3.5-turbo'):
     messages = [{"role":"user","content":zhusizhe_prompt+ "<" +prompt + ">"}]
